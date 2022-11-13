@@ -1,16 +1,15 @@
-package web.carservice;
+package web.service;
 
 import org.springframework.stereotype.Service;
-import web.dao.CarDao;
+import web.dao.CarDaoImp;
 import web.object.Car;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class CarService {
+public class CarServiceImp implements CarService {
 
-CarDao carDao = new CarDao();
+CarDaoImp carDao = new CarDaoImp();
 
     public List<Car> getLimitCars(Integer count) {
         return carDao.getAllCars().stream().limit(count).toList();
